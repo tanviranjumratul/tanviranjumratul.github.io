@@ -4,4 +4,4 @@ My portfolio website built using HTML, CSS, and JavaScript. You can check it out
 
 
 * LinkedIn: [@tanviranjumratul](https://www.linkedin.com/in/tanviranjumratul)
-* GitHub: [@tanviranjumratul](https://github.com/ratultanvir)
+* GitHub: [@tanviranjumratul](https://github.com/tanviranjumratul)
