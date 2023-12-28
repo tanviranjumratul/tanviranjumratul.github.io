@@ -1,0 +1,50 @@
+[
+    {
+        "name": "Excel",
+        "icon": "https://icons.iconarchive.com/icons/dakirby309/simply-styled/48/Microsoft-Excel-2013-icon.png"
+    },
+    {
+        "name": "MySQL",
+        "icon": "https://img.icons8.com/color/48/000000/mysql-logo.png"
+    },
+    {
+        "name": "Power BI",
+        "icon": "https://icons.iconarchive.com/icons/gartoon-team/gartoon-apps/48/gnome-power-statistics-icon.png"
+    },
+    {
+        "name": "Tableau",
+        "icon": "https://icons.iconarchive.com/icons/simpleicons-team/simple/48/tableau-icon.png"
+    },
+    {
+        "name": "PostgreSQL",
+        "icon": "https://img.icons8.com/color/48/000000/postgreesql.png"
+    },
+    {
+        "name": "Python",
+        "icon": "https://img.icons8.com/color/48/000000/python--v1.png"
+    },
+    {
+        "name": "R",
+        "icon": "https://icons.iconarchive.com/icons/simpleicons-team/simple/48/r-icon.png"
+    },
+    {
+        "name": "AWS",
+        "icon": "https://img.icons8.com/color/48/000000/amazon-web-services.png"
+    },
+    {
+        "name": "GitHub",
+        "icon": "https://img.icons8.com/glyph-neue/48/ffffff/github.png"
+    },
+    {
+        "name": "HTML5",
+        "icon": "https://img.icons8.com/color/48/000000/html-5--v1.png"
+    },
+    {
+        "name": "CSS3",
+        "icon": "https://img.icons8.com/color/48/000000/css3.png"
+    },
+    {
+        "name": "WordPress",
+        "icon": "https://img.icons8.com/color/48/000000/wordpress.png"
+    }
+]
