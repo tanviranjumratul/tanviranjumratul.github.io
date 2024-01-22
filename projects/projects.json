@@ -10,9 +10,9 @@
     }
   },
   {
-    "name": "Super Market Sales Data Analysis",
-    "desc": "A Super Market Sales Data Analysis Is here ",
-    "image": "supermarket",
+    "name": "Super Store Sales Data Analysis with Excel",
+    "desc": "A Super Store Sales Data Analysis Is here ",
+    "image": "superstore",
     "category": "mern",
     "links": {
       "view": "#",
