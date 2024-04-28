@@ -10,10 +10,10 @@
     }
   },
   {
-    "name": "Super Store Sales Data Analysis with Excel",
-    "desc": "A Super Store Sales Data Analysis Is here ",
-    "image": "superstore",
-    "category": "mern",
+    "name": "Job Posting Analysis Dasboard with Power BI",
+    "desc": "A Job Posting Data Analysis Is here ",
+    "image": "JobPosting",
+    "category": "Power Bi",
     "links": {
       "view": "#",
       "code": "#"
