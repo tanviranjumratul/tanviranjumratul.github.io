@@ -1,4 +1,14 @@
 [
+    {
+    "name": "Job Posting Analysis Dasboard with Power BI",
+    "desc": "A Job Posting Data Analysis Is here ",
+    "image": "jobposting",
+    "category": "Power Bi",
+    "links": {
+      "view": "https://drive.google.com/file/d/1RfMz57DQ09UTtEg6TIYntqIqp3WtQgxk/view?usp=sharing",
+      "code": "https://drive.google.com/file/d/1Vvv_jGTH0ySrFLIa4gQoARmEbhvodent/view?usp=sharing"
+    },
+  
   {
     "name": "Super Market Sales Data Analysis",
     "desc": "A Super Market Sales Data Analysis Is here ",
@@ -8,15 +18,6 @@
       "view": "#",
       "code": "#"
     }
-  },
-  {
-    "name": "Job Posting Analysis Dasboard with Power BI",
-    "desc": "A Job Posting Data Analysis Is here ",
-    "image": "jobposting",
-    "category": "Power Bi",
-    "links": {
-      "view": "https://drive.google.com/file/d/1RfMz57DQ09UTtEg6TIYntqIqp3WtQgxk/view?usp=sharing",
-      "code": "https://drive.google.com/file/d/1Vvv_jGTH0ySrFLIa4gQoARmEbhvodent/view?usp=sharing"
-    }
+  }
   }
 ]
