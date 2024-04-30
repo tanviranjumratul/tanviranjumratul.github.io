@@ -1,23 +1,31 @@
 [
-    {
-        "name": "Excel",
-        "icon": "https://icons.iconarchive.com/icons/dakirby309/simply-styled/48/Microsoft-Excel-2013-icon.png"
+        {
+        "name": "Power BI",
+        "icon": "https://img.icons8.com/color/48/power-bi-2021.png"
     },
     {
         "name": "MySQL",
         "icon": "https://img.icons8.com/color/48/000000/mysql-logo.png"
     },
     {
-        "name": "Power BI",
-        "icon": "https://img.icons8.com/color/48/power-bi-2021.png"
-    },
-    {
-        "name": "Tableau",
-        "icon": "https://icons.iconarchive.com/icons/simpleicons-team/simple/48/tableau-icon.png"
+        "name": "Snowflake",
+        "icon": "https://img.icons8.com/color/48/snowflake.png"
     },
     {
         "name": "PostgreSQL",
         "icon": "https://img.icons8.com/color/48/000000/postgreesql.png"
+    },
+    {
+        "name": "Excel",
+        "icon": "https://icons.iconarchive.com/icons/dakirby309/simply-styled/48/Microsoft-Excel-2013-icon.png"
+    },
+    {
+        "name": "Tableau",
+        "icon": "https://img.icons8.com/color/48/tableau-software.png"
+    },
+    {
+        "name": "Statistics",
+        "icon": "https://img.icons8.com/external-yogi-aprelliyanto-basic-outline-yogi-aprelliyanto/64/external-statistic-marketing-and-seo-yogi-aprelliyanto-basic-outline-yogi-aprelliyanto.png"
     },
     {
         "name": "Python",
