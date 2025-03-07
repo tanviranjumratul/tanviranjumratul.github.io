@@ -63,7 +63,7 @@ document.addEventListener('visibilitychange',
             $("#favicon").attr("href", "assets/images/favicon.png");
         }
         else {
-            document.title = "Come Back To Portfolio";
+            document.title = "Tanvir Anjum Ratul";
             $("#favicon").attr("href", "assets/images/favhand.png");
         }
     });
