@@ -19,5 +19,27 @@
       "view": "https://drive.google.com/file/d/1_u2Z3aXu8TSrhhmo2cvM1jmo2fUpIwMj/view?usp=sharing",
       "code": "https://drive.google.com/file/d/1XZn5c7IUjHtEx8HoAvuk59EpL3mVzTT2/view?usp=sharing"
     }
+  },
+  
+  {
+    "name": "Famous Paintings SQL Case Study",
+    "desc": "Famous-Paintings-SQL-Case-Study Analysis Is here ",
+    "image": "fp",
+    "category": "SQL",
+    "links": {
+      "view": "https://github.com/tanviranjumratul/tanviranjumratul.github.io/blob/main/assets/images/projects/fp.jpg",
+      "code": "https://github.com/tanviranjumratul/Data-Analysis-Projects/tree/main/Famous-Paintings-SQL-Case-Study"
+    }
+  },
+    
+  {
+    "name": "Telco Customer Churn Analysis",
+    "desc": "Telco Customer Churn Analysis Analysis Is here ",
+    "image": "cca",
+    "category": "SQL",
+    "links": {
+      "view": "https://github.com/tanviranjumratul/tanviranjumratul.github.io/blob/main/assets/images/projects/cca.jpg",
+      "code": "https://github.com/tanviranjumratul/Data-Analysis-Projects/tree/main/Telco%20Customer%20Churn"
+    }
   }
 ]
