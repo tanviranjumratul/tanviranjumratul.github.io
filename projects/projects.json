@@ -1,7 +1,7 @@
 [
     {
-    "name": "Job Posting Analysis Dasboard with Power BI",
-    "desc": "A Job Posting Data Analysis Is here ",
+    "name": "Job Posting Analysis",
+    "desc": "A Job Posting Data Analysis Dasboard with Power BI Is here ",
     "image": "jobposting",
     "category": "Power Bi",
     "links": {
@@ -43,3 +43,4 @@
     }
   }
 ]
+
