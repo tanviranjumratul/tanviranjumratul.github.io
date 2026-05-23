@@ -1,0 +1,1783 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Tanvir Anjum Ratul — IT Professional & Network Specialist at Aristopharma Ltd. CSE Graduate skilled in Network Administration, Data Analysis, and IT Infrastructure." />
+  <meta name="keywords" content="Tanvir Anjum Ratul, IT Professional, Network Specialist, Data Analyst, Dhaka Bangladesh, Aristopharma" />
+  <title>Tanvir Anjum Ratul | IT Professional</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Exo+2:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+<style>
+/* ===== CSS VARIABLES ===== */
+:root {
+  --bg-primary: #050b18;
+  --bg-secondary: #0a1628;
+  --bg-card: #0d1f3c;
+  --bg-card2: #081525;
+  --accent-cyan: #00d4ff;
+  --accent-orange: #ff6b35;
+  --accent-green: #00ff88;
+  --accent-purple: #8b5cf6;
+  --text-primary: #e8f4fd;
+  --text-secondary: #7fa8cc;
+  --text-muted: #4a7a9b;
+  --border-glow: rgba(0, 212, 255, 0.25);
+  --border-dim: rgba(0, 212, 255, 0.08);
+  --shadow-cyan: 0 0 20px rgba(0, 212, 255, 0.15);
+  --shadow-orange: 0 0 20px rgba(255, 107, 53, 0.15);
+  --font-mono: 'Share Tech Mono', monospace;
+  --font-display: 'Exo 2', sans-serif;
+  --font-code: 'JetBrains Mono', monospace;
+}
+
+/* ===== RESET ===== */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-display);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+a { text-decoration: none; color: inherit; }
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-primary); }
+::-webkit-scrollbar-thumb { background: var(--accent-cyan); border-radius: 3px; }
+
+/* ===== NETWORK CANVAS BG ===== */
+#network-canvas {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: 0;
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+/* ===== HEADER / NAV ===== */
+header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5%;
+  height: 65px;
+  background: rgba(5, 11, 24, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-dim);
+}
+.logo {
+  font-family: var(--font-mono);
+  font-size: 1.15rem;
+  color: var(--accent-cyan);
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.logo .logo-bracket { color: var(--accent-orange); }
+.logo .logo-dot { color: var(--text-muted); font-size: 0.7rem; margin: 0 4px; }
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 0.2rem;
+}
+nav ul li a {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  padding: 6px 14px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+  transition: all 0.2s;
+  text-transform: uppercase;
+}
+nav ul li a:hover,
+nav ul li a.active {
+  color: var(--accent-cyan);
+  background: rgba(0, 212, 255, 0.08);
+}
+
+/* hamburger */
+#menu-btn {
+  display: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: var(--accent-cyan);
+}
+
+/* ===== SECTION BASE ===== */
+section {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  padding: 100px 7% 60px;
+}
+
+/* ===== SECTION HEADINGS ===== */
+.section-label {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--accent-orange);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.section-title {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+.section-title span { color: var(--accent-cyan); }
+.section-divider {
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-cyan), transparent);
+  margin-bottom: 50px;
+  border-radius: 2px;
+}
+
+/* ===== HERO SECTION ===== */
+#home {
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  padding-top: 65px;
+  gap: 60px;
+}
+.hero-content {
+  flex: 1;
+  max-width: 620px;
+}
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--accent-green);
+  padding: 6px 16px;
+  border: 1px solid rgba(0, 255, 136, 0.3);
+  border-radius: 20px;
+  margin-bottom: 28px;
+  background: rgba(0, 255, 136, 0.05);
+  animation: fadeInUp 0.6s ease both;
+}
+.hero-tag::before {
+  content: '';
+  width: 8px; height: 8px;
+  background: var(--accent-green);
+  border-radius: 50%;
+  animation: pulse-green 2s infinite;
+}
+@keyframes pulse-green {
+  0%,100% { opacity:1; box-shadow: 0 0 0 0 rgba(0,255,136,0.4); }
+  50% { opacity:0.7; box-shadow: 0 0 0 6px rgba(0,255,136,0); }
+}
+.hero-name {
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 16px;
+  animation: fadeInUp 0.7s 0.1s ease both;
+}
+.hero-name .first { color: var(--text-primary); }
+.hero-name .last { color: var(--accent-cyan); }
+.hero-role {
+  font-family: var(--font-mono);
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: var(--accent-orange);
+  margin-bottom: 24px;
+  min-height: 1.8em;
+  animation: fadeInUp 0.7s 0.2s ease both;
+}
+.hero-desc {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: 36px;
+  max-width: 500px;
+  animation: fadeInUp 0.7s 0.3s ease both;
+}
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 44px;
+  animation: fadeInUp 0.7s 0.4s ease both;
+}
+.btn-primary {
+  padding: 13px 30px;
+  background: var(--accent-cyan);
+  color: var(--bg-primary);
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  transition: all 0.25s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-primary:hover {
+  background: #00eeff;
+  box-shadow: 0 0 25px rgba(0,212,255,0.5);
+  transform: translateY(-2px);
+}
+.btn-secondary {
+  padding: 13px 30px;
+  border: 1px solid var(--accent-cyan);
+  color: var(--accent-cyan);
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  transition: all 0.25s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-secondary:hover {
+  background: rgba(0,212,255,0.1);
+  box-shadow: 0 0 20px rgba(0,212,255,0.2);
+  transform: translateY(-2px);
+}
+.hero-socials {
+  display: flex;
+  gap: 14px;
+  animation: fadeInUp 0.7s 0.5s ease both;
+}
+.hero-socials a {
+  width: 40px; height: 40px;
+  border-radius: 8px;
+  border: 1px solid var(--border-dim);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-size: 1rem;
+  transition: all 0.25s;
+  background: var(--bg-card2);
+}
+.hero-socials a:hover {
+  color: var(--accent-cyan);
+  border-color: var(--accent-cyan);
+  box-shadow: var(--shadow-cyan);
+  transform: translateY(-3px);
+}
+.hero-visual {
+  flex: 0 0 380px;
+  display: flex;
+  justify-content: center;
+  animation: fadeInUp 0.8s 0.3s ease both;
+}
+.hero-card {
+  width: 340px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-glow);
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: var(--shadow-cyan), inset 0 1px 0 rgba(255,255,255,0.04);
+  position: relative;
+  overflow: hidden;
+}
+.hero-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-cyan), var(--accent-purple), var(--accent-orange));
+}
+.hcard-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border-dim);
+}
+.hcard-dot { width: 10px; height: 10px; border-radius: 50%; }
+.hcard-dot:nth-child(1) { background: #ff5f56; }
+.hcard-dot:nth-child(2) { background: #ffbd2e; }
+.hcard-dot:nth-child(3) { background: #27c93f; }
+.hcard-title { font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); margin-left: auto; }
+.hcard-line {
+  font-family: var(--font-code);
+  font-size: 0.78rem;
+  line-height: 2;
+  margin-bottom: 4px;
+}
+.hcard-line .k { color: var(--accent-purple); }
+.hcard-line .s { color: var(--accent-green); }
+.hcard-line .p { color: var(--text-muted); }
+.hcard-line .v { color: var(--accent-cyan); }
+.hcard-line .n { color: var(--accent-orange); }
+.hcard-cursor {
+  display: inline-block;
+  width: 8px; height: 14px;
+  background: var(--accent-cyan);
+  animation: blink 1.2s infinite;
+  vertical-align: middle;
+}
+@keyframes blink { 0%,100% { opacity:1; } 50% { opacity:0; } }
+.hero-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border-dim);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: 20px;
+}
+.stat-item {
+  background: var(--bg-card2);
+  padding: 14px 10px;
+  text-align: center;
+}
+.stat-num {
+  font-family: var(--font-mono);
+  font-size: 1.4rem;
+  color: var(--accent-cyan);
+  font-weight: 700;
+  display: block;
+}
+.stat-label { font-size: 0.68rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; }
+
+/* ===== ABOUT SECTION ===== */
+#about { background: var(--bg-secondary); }
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 60px;
+  align-items: start;
+}
+.about-profile {
+  position: sticky;
+  top: 90px;
+}
+.profile-img-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 280px;
+  margin-bottom: 24px;
+}
+.profile-img-wrap::before {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, var(--accent-cyan), var(--accent-purple), var(--accent-orange));
+  z-index: -1;
+}
+.profile-img {
+  width: 100%;
+  border-radius: 14px;
+  display: block;
+  background: var(--bg-card);
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+.profile-placeholder {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 14px;
+  background: var(--bg-card);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  border: 1px solid var(--border-dim);
+}
+.profile-placeholder i { font-size: 4rem; color: var(--accent-cyan); opacity: 0.5; }
+.profile-placeholder span { font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-muted); }
+.info-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.78rem;
+  padding: 6px 14px;
+  border-radius: 20px;
+  border: 1px solid var(--border-dim);
+  background: var(--bg-card2);
+  color: var(--text-secondary);
+}
+.chip i { color: var(--accent-cyan); font-size: 0.7rem; }
+.chip.orange { border-color: rgba(255,107,53,0.3); }
+.chip.orange i { color: var(--accent-orange); }
+
+.about-text h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--text-primary);
+}
+.about-text .role-badge {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--accent-orange);
+  padding: 4px 14px;
+  border: 1px solid rgba(255,107,53,0.4);
+  border-radius: 4px;
+  background: rgba(255,107,53,0.06);
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.about-text p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.85;
+  margin-bottom: 16px;
+}
+.about-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 28px 0;
+  padding: 24px;
+  background: var(--bg-card2);
+  border: 1px solid var(--border-dim);
+  border-radius: 12px;
+}
+.detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.detail-label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.detail-value {
+  font-size: 0.88rem;
+  color: var(--text-primary);
+}
+.detail-value a { color: var(--accent-cyan); }
+
+/* ===== SKILLS SECTION ===== */
+#skills { }
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+.skill-category {
+  background: var(--bg-card);
+  border: 1px solid var(--border-dim);
+  border-radius: 14px;
+  padding: 28px;
+  transition: all 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+.skill-category::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.skill-category.cyan::before { background: linear-gradient(90deg, var(--accent-cyan), transparent); }
+.skill-category.orange::before { background: linear-gradient(90deg, var(--accent-orange), transparent); }
+.skill-category.green::before { background: linear-gradient(90deg, var(--accent-green), transparent); }
+.skill-category.purple::before { background: linear-gradient(90deg, var(--accent-purple), transparent); }
+.skill-category:hover { border-color: var(--border-glow); transform: translateY(-4px); }
+.skill-category:hover::before { opacity: 1; }
+.skill-cat-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+.skill-cat-icon {
+  width: 42px; height: 42px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+}
+.cyan .skill-cat-icon { background: rgba(0,212,255,0.1); color: var(--accent-cyan); }
+.orange .skill-cat-icon { background: rgba(255,107,53,0.1); color: var(--accent-orange); }
+.green .skill-cat-icon { background: rgba(0,255,136,0.1); color: var(--accent-green); }
+.purple .skill-cat-icon { background: rgba(139,92,246,0.1); color: var(--accent-purple); }
+.skill-cat-name {
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--text-primary);
+}
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.skill-tag {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  padding: 5px 12px;
+  border-radius: 5px;
+  border: 1px solid;
+  transition: all 0.2s;
+  cursor: default;
+}
+.cyan .skill-tag { border-color: rgba(0,212,255,0.2); color: var(--text-secondary); background: rgba(0,212,255,0.04); }
+.cyan .skill-tag:hover { border-color: var(--accent-cyan); color: var(--accent-cyan); background: rgba(0,212,255,0.1); }
+.orange .skill-tag { border-color: rgba(255,107,53,0.2); color: var(--text-secondary); background: rgba(255,107,53,0.04); }
+.orange .skill-tag:hover { border-color: var(--accent-orange); color: var(--accent-orange); background: rgba(255,107,53,0.1); }
+.green .skill-tag { border-color: rgba(0,255,136,0.2); color: var(--text-secondary); background: rgba(0,255,136,0.04); }
+.green .skill-tag:hover { border-color: var(--accent-green); color: var(--accent-green); background: rgba(0,255,136,0.1); }
+.purple .skill-tag { border-color: rgba(139,92,246,0.2); color: var(--text-secondary); background: rgba(139,92,246,0.04); }
+.purple .skill-tag:hover { border-color: var(--accent-purple); color: var(--accent-purple); background: rgba(139,92,246,0.1); }
+
+/* ===== EDUCATION SECTION ===== */
+#education { background: var(--bg-secondary); }
+.education-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+}
+.edu-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-dim);
+  border-radius: 14px;
+  padding: 30px;
+  transition: all 0.3s;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.edu-card:hover {
+  border-color: var(--border-glow);
+  box-shadow: var(--shadow-cyan);
+  transform: translateY(-4px);
+}
+.edu-icon {
+  width: 52px; height: 52px;
+  border-radius: 12px;
+  background: rgba(0,212,255,0.08);
+  border: 1px solid rgba(0,212,255,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  color: var(--accent-cyan);
+}
+.edu-degree {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.4;
+}
+.edu-inst {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-top: 4px;
+}
+.edu-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  padding: 4px 12px;
+  border-radius: 4px;
+  background: rgba(0,255,136,0.08);
+  border: 1px solid rgba(0,255,136,0.3);
+  color: var(--accent-green);
+  width: fit-content;
+}
+.edu-status::before {
+  content: '';
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--accent-green);
+}
+
+/* ===== EXPERIENCE SECTION ===== */
+#experience { }
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 28px;
+  top: 0; bottom: 0;
+  width: 1px;
+  background: linear-gradient(180deg, var(--accent-cyan), transparent);
+}
+.timeline-item {
+  display: flex;
+  gap: 28px;
+  margin-bottom: 40px;
+  padding-left: 24px;
+  position: relative;
+}
+.timeline-dot {
+  flex-shrink: 0;
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: var(--accent-cyan);
+  margin-top: 8px;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 0 12px rgba(0,212,255,0.6);
+}
+.timeline-dot.active {
+  animation: pulse-dot 2s infinite;
+}
+@keyframes pulse-dot {
+  0%,100% { box-shadow: 0 0 0 0 rgba(0,212,255,0.5); }
+  50% { box-shadow: 0 0 0 8px rgba(0,212,255,0); }
+}
+.timeline-content {
+  flex: 1;
+  background: var(--bg-card);
+  border: 1px solid var(--border-dim);
+  border-radius: 12px;
+  padding: 22px 26px;
+  transition: all 0.3s;
+}
+.timeline-content:hover {
+  border-color: var(--border-glow);
+  box-shadow: var(--shadow-cyan);
+}
+.tl-company {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--accent-orange);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+}
+.tl-role {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+.tl-dept {
+  font-size: 0.85rem;
+  color: var(--accent-cyan);
+  margin-bottom: 8px;
+}
+.tl-period {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.73rem;
+  color: var(--text-muted);
+  padding: 3px 10px;
+  border-radius: 4px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--border-dim);
+  margin-bottom: 12px;
+}
+.tl-desc {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+}
+.tl-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 14px;
+}
+.tl-tag {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  padding: 3px 10px;
+  border-radius: 4px;
+  background: rgba(0,212,255,0.06);
+  border: 1px solid rgba(0,212,255,0.15);
+  color: var(--text-muted);
+}
+
+/* ===== PROJECTS SECTION ===== */
+#projects { background: var(--bg-secondary); }
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+}
+.project-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-dim);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: all 0.3s;
+}
+.project-card:hover {
+  border-color: var(--border-glow);
+  box-shadow: var(--shadow-cyan);
+  transform: translateY(-5px);
+}
+.project-img {
+  width: 100%;
+  height: 180px;
+  background: var(--bg-card2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+.project-img-inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.project-img-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.7;
+  transition: all 0.4s;
+}
+.project-card:hover .project-img-bg { opacity: 1; transform: scale(1.05); }
+.project-img-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+  color: var(--accent-cyan);
+  opacity: 0.3;
+}
+.project-badge {
+  position: absolute;
+  top: 12px; right: 12px;
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  padding: 3px 10px;
+  border-radius: 4px;
+  background: rgba(0,212,255,0.15);
+  border: 1px solid rgba(0,212,255,0.4);
+  color: var(--accent-cyan);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.project-body { padding: 22px; }
+.project-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+  line-height: 1.4;
+}
+.project-desc {
+  font-size: 0.84rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin-bottom: 18px;
+}
+.project-links {
+  display: flex;
+  gap: 10px;
+}
+.proj-btn {
+  flex: 1;
+  padding: 9px;
+  border-radius: 7px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  text-align: center;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+.proj-btn-view {
+  background: rgba(0,212,255,0.08);
+  border: 1px solid rgba(0,212,255,0.25);
+  color: var(--accent-cyan);
+}
+.proj-btn-view:hover {
+  background: rgba(0,212,255,0.18);
+  border-color: var(--accent-cyan);
+}
+.proj-btn-code {
+  background: rgba(255,107,53,0.08);
+  border: 1px solid rgba(255,107,53,0.25);
+  color: var(--accent-orange);
+}
+.proj-btn-code:hover {
+  background: rgba(255,107,53,0.18);
+  border-color: var(--accent-orange);
+}
+
+/* ===== CONTACT SECTION ===== */
+#contact { }
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 50px;
+  align-items: start;
+}
+.contact-info h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 14px;
+  color: var(--text-primary);
+}
+.contact-info p {
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  line-height: 1.8;
+  margin-bottom: 32px;
+}
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-dim);
+  border-radius: 10px;
+  margin-bottom: 12px;
+  transition: all 0.2s;
+  text-decoration: none;
+}
+.contact-item:hover {
+  border-color: var(--border-glow);
+  transform: translateX(6px);
+}
+.contact-item-icon {
+  width: 38px; height: 38px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  background: rgba(0,212,255,0.08);
+  color: var(--accent-cyan);
+  flex-shrink: 0;
+}
+.contact-item-text span { display: block; }
+.contact-item-label { font-family: var(--font-mono); font-size: 0.68rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; }
+.contact-item-value { font-size: 0.88rem; color: var(--text-primary); }
+
+.contact-form {
+  background: var(--bg-card);
+  border: 1px solid var(--border-dim);
+  border-radius: 14px;
+  padding: 32px;
+}
+.contact-form h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 24px;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.contact-form h3 i { color: var(--accent-cyan); font-size: 0.9rem; }
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+.form-group { margin-bottom: 14px; }
+.form-group label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 7px;
+}
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  background: var(--bg-primary);
+  border: 1px solid var(--border-dim);
+  border-radius: 8px;
+  padding: 11px 16px;
+  font-family: var(--font-display);
+  font-size: 0.88rem;
+  color: var(--text-primary);
+  transition: all 0.2s;
+  outline: none;
+}
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--accent-cyan);
+  box-shadow: 0 0 0 3px rgba(0,212,255,0.08);
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder { color: var(--text-muted); }
+.form-group textarea { height: 110px; resize: vertical; }
+
+/* ===== FOOTER ===== */
+footer {
+  position: relative;
+  z-index: 1;
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border-dim);
+  padding: 50px 7% 30px;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+.footer-brand h3 {
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  color: var(--accent-cyan);
+  margin-bottom: 12px;
+}
+.footer-brand p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  max-width: 280px;
+}
+.footer-col h4 {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 16px;
+}
+.footer-col a {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  padding: 5px 0;
+  transition: all 0.2s;
+}
+.footer-col a:hover { color: var(--accent-cyan); padding-left: 6px; }
+.footer-socials {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+}
+.footer-socials a {
+  width: 36px; height: 36px;
+  border-radius: 8px;
+  border: 1px solid var(--border-dim);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  transition: all 0.2s;
+}
+.footer-socials a:hover { color: var(--accent-cyan); border-color: var(--accent-cyan); background: rgba(0,212,255,0.08); }
+.footer-bottom {
+  border-top: 1px solid var(--border-dim);
+  padding-top: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.footer-bottom p { font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted); }
+.footer-bottom .accent { color: var(--accent-cyan); }
+
+/* ===== SCROLL TOP ===== */
+#scroll-top {
+  position: fixed;
+  bottom: 28px; right: 28px;
+  width: 42px; height: 42px;
+  border-radius: 10px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-glow);
+  color: var(--accent-cyan);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  z-index: 999;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.3s;
+  cursor: pointer;
+}
+#scroll-top.visible { opacity: 1; transform: translateY(0); }
+#scroll-top:hover { background: var(--accent-cyan); color: var(--bg-primary); }
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== TYPING EFFECT ===== */
+.typed-cursor {
+  color: var(--accent-orange);
+  animation: blink 1s infinite;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  #home { flex-direction: column; text-align: center; padding-top: 100px; }
+  .hero-buttons { justify-content: center; }
+  .hero-socials { justify-content: center; }
+  .hero-visual { display: none; }
+  .about-grid { grid-template-columns: 1fr; }
+  .about-profile { position: static; display: flex; flex-direction: column; align-items: center; }
+  .contact-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+  nav { display: none; }
+  nav.open { display: flex; position: fixed; top: 65px; left: 0; right: 0; background: rgba(5,11,24,0.98); border-bottom: 1px solid var(--border-dim); padding: 20px; }
+  nav.open ul { flex-direction: column; gap: 4px; width: 100%; }
+  nav.open ul li a { display: block; padding: 10px 16px; }
+  #menu-btn { display: block; }
+  section { padding: 80px 5% 50px; }
+  .timeline::before { left: 16px; }
+  .timeline-item { padding-left: 12px; }
+}
+@media (max-width: 480px) {
+  .about-details { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- Network Canvas Background -->
+<canvas id="network-canvas"></canvas>
+
+<!-- ===== HEADER ===== -->
+<header>
+  <a href="#home" class="logo">
+    <span class="logo-bracket">[</span>
+    TAR
+    <span class="logo-bracket">]</span>
+    <span class="logo-dot">●</span>
+    <span style="color:var(--text-secondary);font-size:0.75rem;">IT Professional</span>
+  </a>
+  <nav id="navbar">
+    <ul>
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+  <div id="menu-btn"><i class="fas fa-bars"></i></div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section id="home">
+  <div class="hero-content">
+    <div class="hero-tag">Available for Opportunities</div>
+    <h1 class="hero-name">
+      <span class="first">Tanvir Anjum </span><br/>
+      <span class="last">Ratul</span>
+    </h1>
+    <div class="hero-role">
+      <span id="typed-role"></span><span class="typed-cursor">|</span>
+    </div>
+    <p class="hero-desc">
+      IT Professional & CSE Graduate specializing in Network Administration, 
+      IT Infrastructure, and Data-Driven IT Solutions. Currently serving as 
+      Junior IT Officer at <strong style="color:var(--accent-cyan)">Aristopharma Ltd.</strong>
+    </p>
+    <div class="hero-buttons">
+      <a href="#contact" class="btn-primary"><i class="fas fa-terminal"></i> Get In Touch</a>
+      <a href="https://drive.google.com/drive/folders/1jsH-Lfl3cSw4QAcO4WqcnhYHg1VQ3PZF?usp=drive_link" target="_blank" class="btn-secondary"><i class="fas fa-file-alt"></i> View Resume</a>
+    </div>
+    <div class="hero-socials">
+      <a href="https://www.linkedin.com/in/tanviranjumratul" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      <a href="https://github.com/tanviranjumratul" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://twitter.com/TanvirAnjmRatul" target="_blank" aria-label="Twitter/X"><i class="fab fa-x-twitter"></i></a>
+      <a href="https://www.instagram.com/tanviranjumratul" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="mailto:tanjumratul@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+    </div>
+  </div>
+
+  <div class="hero-visual">
+    <div class="hero-card">
+      <div class="hcard-header">
+        <div class="hcard-dot"></div>
+        <div class="hcard-dot"></div>
+        <div class="hcard-dot"></div>
+        <span class="hcard-title">profile.json</span>
+      </div>
+      <div class="hcard-line"><span class="p">{</span></div>
+      <div class="hcard-line">&nbsp;&nbsp;<span class="k">"name"</span><span class="p">: </span><span class="s">"Tanvir Anjum Ratul"</span><span class="p">,</span></div>
+      <div class="hcard-line">&nbsp;&nbsp;<span class="k">"role"</span><span class="p">: </span><span class="s">"IT Officer"</span><span class="p">,</span></div>
+      <div class="hcard-line">&nbsp;&nbsp;<span class="k">"company"</span><span class="p">: </span><span class="s">"Aristopharma Ltd."</span><span class="p">,</span></div>
+      <div class="hcard-line">&nbsp;&nbsp;<span class="k">"domain"</span><span class="p">: </span><span class="s">"Networking & IT"</span><span class="p">,</span></div>
+      <div class="hcard-line">&nbsp;&nbsp;<span class="k">"status"</span><span class="p">: </span><span class="n">"active"</span><span class="p">,</span></div>
+      <div class="hcard-line">&nbsp;&nbsp;<span class="k">"location"</span><span class="p">: </span><span class="s">"Dhaka, BD"</span></div>
+      <div class="hcard-line"><span class="p">}</span><span class="hcard-cursor"></span></div>
+
+      <div class="hero-stats">
+        <div class="stat-item">
+          <span class="stat-num">1+</span>
+          <span class="stat-label">Yrs Exp</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">4+</span>
+          <span class="stat-label">Projects</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num">14+</span>
+          <span class="stat-label">Skills</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section id="about">
+  <div class="reveal">
+    <div class="section-label">// 01. About</div>
+    <h2 class="section-title">About <span>Me</span></h2>
+    <div class="section-divider"></div>
+  </div>
+  <div class="about-grid reveal">
+    <div class="about-profile">
+      <div class="profile-img-wrap">
+        <div class="profile-placeholder">
+          <i class="fas fa-user-tie"></i>
+          <span>Photo Placeholder</span>
+        </div>
+      </div>
+      <div class="info-chips">
+        <div class="chip"><i class="fas fa-map-marker-alt"></i> Dhaka, Bangladesh</div>
+        <div class="chip orange"><i class="fas fa-briefcase"></i> Open to Work</div>
+        <div class="chip"><i class="fas fa-graduation-cap"></i> BSc CSE</div>
+      </div>
+    </div>
+
+    <div class="about-text">
+      <h3>Tanvir Anjum Ratul</h3>
+      <div class="role-badge">IT Officer · Aristopharma Ltd.</div>
+      <p>
+        A results-driven IT Professional with a Bachelor's degree in Computer Science &amp; Engineering, 
+        currently contributing as a <strong style="color:var(--text-primary)">Junior IT Officer</strong> in the IT Department 
+        at <strong style="color:var(--accent-cyan)">Aristopharma Ltd.</strong> — one of Bangladesh's leading pharmaceutical companies.
+      </p>
+      <p>
+        I specialize in network administration, IT infrastructure management, and technical support, 
+        while leveraging my data skills in Power BI, Python, SQL, and Excel to drive smarter IT decisions. 
+        I bring a rare blend of hands-on networking experience and analytical thinking that helps bridge 
+        the gap between IT operations and business intelligence.
+      </p>
+      <p>
+        Quick to adapt to emerging technologies, passionate about network optimization, security 
+        hardening, and building reliable IT environments that enable organizations to operate at peak efficiency.
+      </p>
+      <div class="about-details">
+        <div class="detail-item">
+          <span class="detail-label">Email</span>
+          <span class="detail-value"><a href="mailto:tanjumratul@gmail.com">tanjumratul@gmail.com</a></span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label">Location</span>
+          <span class="detail-value">Dhaka, Bangladesh</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label">Phone</span>
+          <span class="detail-value">+880 17870 66001</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label">Current Role</span>
+          <span class="detail-value">Junior IT Officer</span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label">LinkedIn</span>
+          <span class="detail-value"><a href="https://www.linkedin.com/in/tanviranjumratul" target="_blank">tanviranjumratul</a></span>
+        </div>
+        <div class="detail-item">
+          <span class="detail-label">GitHub</span>
+          <span class="detail-value"><a href="https://github.com/tanviranjumratul" target="_blank">tanviranjumratul</a></span>
+        </div>
+      </div>
+      <div style="display:flex;gap:14px;flex-wrap:wrap;">
+        <a href="https://drive.google.com/drive/folders/1jsH-Lfl3cSw4QAcO4WqcnhYHg1VQ3PZF?usp=drive_link" target="_blank" class="btn-primary"><i class="fas fa-download"></i> Download Resume</a>
+        <a href="#contact" class="btn-secondary"><i class="fas fa-paper-plane"></i> Contact Me</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SKILLS ===== -->
+<section id="skills">
+  <div class="reveal">
+    <div class="section-label">// 02. Skills</div>
+    <h2 class="section-title">Technical <span>Arsenal</span></h2>
+    <div class="section-divider"></div>
+  </div>
+  <div class="skills-grid">
+
+    <div class="skill-category cyan reveal">
+      <div class="skill-cat-header">
+        <div class="skill-cat-icon"><i class="fas fa-network-wired"></i></div>
+        <span class="skill-cat-name">Networking & Infrastructure</span>
+      </div>
+      <div class="skill-tags">
+        <span class="skill-tag">TCP/IP</span>
+        <span class="skill-tag">LAN / WAN</span>
+        <span class="skill-tag">VLAN</span>
+        <span class="skill-tag">DNS / DHCP</span>
+        <span class="skill-tag">VPN</span>
+        <span class="skill-tag">Firewall</span>
+        <span class="skill-tag">Cisco Routers</span>
+        <span class="skill-tag">Network Monitoring</span>
+        <span class="skill-tag">OSI Model</span>
+        <span class="skill-tag">Subnetting</span>
+        <span class="skill-tag">Active Directory</span>
+        <span class="skill-tag">IT Support</span>
+      </div>
+    </div>
+
+    <div class="skill-category orange reveal">
+      <div class="skill-cat-header">
+        <div class="skill-cat-icon"><i class="fas fa-chart-bar"></i></div>
+        <span class="skill-cat-name">Data Analysis & BI</span>
+      </div>
+      <div class="skill-tags">
+        <span class="skill-tag">Power BI</span>
+        <span class="skill-tag">Tableau</span>
+        <span class="skill-tag">Excel / Power Query</span>
+        <span class="skill-tag">Statistics</span>
+        <span class="skill-tag">Data Visualization</span>
+        <span class="skill-tag">ETL Pipelines</span>
+        <span class="skill-tag">Dashboards</span>
+        <span class="skill-tag">Exploratory Analysis</span>
+      </div>
+    </div>
+
+    <div class="skill-category green reveal">
+      <div class="skill-cat-header">
+        <div class="skill-cat-icon"><i class="fas fa-database"></i></div>
+        <span class="skill-cat-name">Databases & Programming</span>
+      </div>
+      <div class="skill-tags">
+        <span class="skill-tag">MySQL</span>
+        <span class="skill-tag">PostgreSQL</span>
+        <span class="skill-tag">Snowflake</span>
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">R</span>
+        <span class="skill-tag">SQL</span>
+        <span class="skill-tag">Web Scraping</span>
+        <span class="skill-tag">HTML5 / CSS3</span>
+      </div>
+    </div>
+
+    <div class="skill-category purple reveal">
+      <div class="skill-cat-header">
+        <div class="skill-cat-icon"><i class="fas fa-cloud"></i></div>
+        <span class="skill-cat-name">Cloud & DevOps Tools</span>
+      </div>
+      <div class="skill-tags">
+        <span class="skill-tag">AWS</span>
+        <span class="skill-tag">GitHub / Git</span>
+        <span class="skill-tag">WordPress</span>
+        <span class="skill-tag">Windows Server</span>
+        <span class="skill-tag">Linux</span>
+        <span class="skill-tag">Remote Desktop</span>
+        <span class="skill-tag">IT Documentation</span>
+        <span class="skill-tag">Troubleshooting</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== EDUCATION ===== -->
+<section id="education">
+  <div class="reveal">
+    <div class="section-label">// 03. Education</div>
+    <h2 class="section-title">Academic <span>Background</span></h2>
+    <div class="section-divider"></div>
+  </div>
+  <div class="education-grid">
+
+    <div class="edu-card reveal">
+      <div class="edu-icon"><i class="fas fa-university"></i></div>
+      <div>
+        <div class="edu-degree">Bachelor of Science in Computer Science &amp; Engineering</div>
+        <div class="edu-inst">Shaikh Burhanuddin Post Graduate College, Dhaka</div>
+      </div>
+      <div class="edu-status">Graduated</div>
+    </div>
+
+    <div class="edu-card reveal">
+      <div class="edu-icon"><i class="fas fa-school"></i></div>
+      <div>
+        <div class="edu-degree">Higher Secondary Certificate (HSC) — Science</div>
+        <div class="edu-inst">Sreenagar Government College, Sreenagar, Munshiganj</div>
+      </div>
+      <div class="edu-status">Completed</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== EXPERIENCE ===== -->
+<section id="experience">
+  <div class="reveal">
+    <div class="section-label">// 04. Experience</div>
+    <h2 class="section-title">Work <span>History</span></h2>
+    <div class="section-divider"></div>
+  </div>
+
+  <div class="timeline">
+
+    <div class="timeline-item reveal">
+      <div class="timeline-dot active"></div>
+      <div class="timeline-content">
+        <div class="tl-company">Aristopharma Ltd.</div>
+        <div class="tl-role">Junior IT Officer</div>
+        <div class="tl-dept"><i class="fas fa-server" style="font-size:0.75rem;margin-right:5px;"></i>IT Department</div>
+        <div class="tl-period"><i class="fas fa-calendar-alt"></i> August 2024 — Present</div>
+        <div class="tl-desc">
+          Supporting and maintaining IT infrastructure for one of Bangladesh's leading pharmaceutical companies. 
+          Responsible for network administration, hardware/software support, and IT operations. 
+          Ensuring uptime, security, and efficiency of internal systems across departments.
+        </div>
+        <div class="tl-tags">
+          <span class="tl-tag">Network Admin</span>
+          <span class="tl-tag">IT Support</span>
+          <span class="tl-tag">Infrastructure</span>
+          <span class="tl-tag">Troubleshooting</span>
+          <span class="tl-tag">Active Directory</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="timeline-item reveal">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <div class="tl-company">Self-Employed</div>
+        <div class="tl-role">Freelance Data Analyst</div>
+        <div class="tl-dept"><i class="fas fa-chart-line" style="font-size:0.75rem;margin-right:5px;"></i>Data & Analytics</div>
+        <div class="tl-period"><i class="fas fa-calendar-alt"></i> April 2023 — Present</div>
+        <div class="tl-desc">
+          Providing freelance data analysis services including dashboard creation in Power BI, 
+          SQL-based data querying, data cleaning, and exploratory analysis. Delivering 
+          actionable insights and reports to support data-driven decision-making for clients.
+        </div>
+        <div class="tl-tags">
+          <span class="tl-tag">Power BI</span>
+          <span class="tl-tag">SQL</span>
+          <span class="tl-tag">Python</span>
+          <span class="tl-tag">Excel</span>
+          <span class="tl-tag">Tableau</span>
+          <span class="tl-tag">Data Visualization</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== PROJECTS ===== -->
+<section id="projects">
+  <div class="reveal">
+    <div class="section-label">// 05. Projects</div>
+    <h2 class="section-title">Featured <span>Projects</span></h2>
+    <div class="section-divider"></div>
+  </div>
+  <div class="projects-grid" id="projects-container">
+
+    <div class="project-card reveal">
+      <div class="project-img">
+        <div class="project-img-placeholder"><i class="fas fa-briefcase"></i></div>
+        <span class="project-badge">Power BI</span>
+      </div>
+      <div class="project-body">
+        <div class="project-name">Job Posting Analysis Dashboard</div>
+        <div class="project-desc">An interactive Power BI dashboard analyzing job market trends, demand by role, salary distributions, and hiring patterns across industries.</div>
+        <div class="project-links">
+          <a href="https://drive.google.com/file/d/1RfMz57DQ09UTtEg6TIYntqIqp3WtQgxk/view?usp=sharing" target="_blank" class="proj-btn proj-btn-view"><i class="fas fa-eye"></i> View</a>
+          <a href="https://drive.google.com/file/d/1Vvv_jGTH0ySrFLIa4gQoARmEbhvodent/view?usp=sharing" target="_blank" class="proj-btn proj-btn-code"><i class="fas fa-code"></i> Source</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-img">
+        <div class="project-img-placeholder"><i class="fas fa-shopping-cart"></i></div>
+        <span class="project-badge">Power BI</span>
+      </div>
+      <div class="project-body">
+        <div class="project-name">Supermarket Sales Analysis</div>
+        <div class="project-desc">A comprehensive sales analytics dashboard built in Power BI covering revenue trends, product performance, and regional comparisons for a supermarket chain.</div>
+        <div class="project-links">
+          <a href="https://drive.google.com/file/d/1_u2Z3aXu8TSrhhmo2cvM1jmo2fUpIwMj/view?usp=sharing" target="_blank" class="proj-btn proj-btn-view"><i class="fas fa-eye"></i> View</a>
+          <a href="https://drive.google.com/file/d/1XZn5c7IUjHtEx8HoAvuk59EpL3mVzTT2/view?usp=sharing" target="_blank" class="proj-btn proj-btn-code"><i class="fas fa-code"></i> Source</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-img">
+        <div class="project-img-placeholder"><i class="fas fa-palette"></i></div>
+        <span class="project-badge">SQL</span>
+      </div>
+      <div class="project-body">
+        <div class="project-name">Famous Paintings SQL Case Study</div>
+        <div class="project-desc">A deep-dive SQL case study on a famous paintings dataset — performing complex joins, aggregations, window functions, and deriving insights on artists and art styles.</div>
+        <div class="project-links">
+          <a href="https://github.com/tanviranjumratul/tanviranjumratul.github.io/blob/main/assets/images/projects/fp.jpg" target="_blank" class="proj-btn proj-btn-view"><i class="fas fa-eye"></i> View</a>
+          <a href="https://github.com/tanviranjumratul/Data-Analysis-Projects/tree/main/Famous-Paintings-SQL-Case-Study" target="_blank" class="proj-btn proj-btn-code"><i class="fab fa-github"></i> Code</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-img">
+        <div class="project-img-placeholder"><i class="fas fa-users"></i></div>
+        <span class="project-badge">SQL</span>
+      </div>
+      <div class="project-body">
+        <div class="project-name">Telco Customer Churn Analysis</div>
+        <div class="project-desc">SQL-based churn analysis identifying key drivers behind customer attrition in a telecom dataset, with segmentation, retention pattern mining, and risk scoring.</div>
+        <div class="project-links">
+          <a href="https://github.com/tanviranjumratul/tanviranjumratul.github.io/blob/main/assets/images/projects/cca.jpg" target="_blank" class="proj-btn proj-btn-view"><i class="fas fa-eye"></i> View</a>
+          <a href="https://github.com/tanviranjumratul/Data-Analysis-Projects/tree/main/Telco%20Customer%20Churn" target="_blank" class="proj-btn proj-btn-code"><i class="fab fa-github"></i> Code</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section id="contact">
+  <div class="reveal">
+    <div class="section-label">// 06. Contact</div>
+    <h2 class="section-title">Get In <span>Touch</span></h2>
+    <div class="section-divider"></div>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-info reveal">
+      <h3>Let's Connect</h3>
+      <p>Have an IT project, networking challenge, or data initiative in mind? I'm open to collaborations, opportunities, and interesting conversations. Reach out through any of the channels below.</p>
+      <a href="mailto:tanjumratul@gmail.com" class="contact-item">
+        <div class="contact-item-icon"><i class="fas fa-envelope"></i></div>
+        <div class="contact-item-text">
+          <span class="contact-item-label">Email</span>
+          <span class="contact-item-value">tanjumratul@gmail.com</span>
+        </div>
+      </a>
+      <a href="tel:+8801787066001" class="contact-item">
+        <div class="contact-item-icon"><i class="fas fa-phone"></i></div>
+        <div class="contact-item-text">
+          <span class="contact-item-label">Phone</span>
+          <span class="contact-item-value">+880 17870 66001</span>
+        </div>
+      </a>
+      <a href="https://www.linkedin.com/in/tanviranjumratul" target="_blank" class="contact-item">
+        <div class="contact-item-icon"><i class="fab fa-linkedin-in"></i></div>
+        <div class="contact-item-text">
+          <span class="contact-item-label">LinkedIn</span>
+          <span class="contact-item-value">in/tanviranjumratul</span>
+        </div>
+      </a>
+      <div class="contact-item" style="cursor:default;">
+        <div class="contact-item-icon"><i class="fas fa-map-marker-alt"></i></div>
+        <div class="contact-item-text">
+          <span class="contact-item-label">Location</span>
+          <span class="contact-item-value">Dhaka, Bangladesh</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form reveal">
+      <h3><i class="fas fa-terminal"></i> Send a Message</h3>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Your Name</label>
+          <input type="text" placeholder="John Doe" />
+        </div>
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" placeholder="john@example.com" />
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Subject</label>
+        <input type="text" placeholder="IT Collaboration / Job Opportunity" />
+      </div>
+      <div class="form-group">
+        <label>Message</label>
+        <textarea placeholder="Tell me about your project or opportunity..."></textarea>
+      </div>
+      <button onclick="handleFormSubmit(this)" class="btn-primary" style="width:100%;justify-content:center;">
+        <i class="fas fa-paper-plane"></i> Send Message
+      </button>
+      <div id="form-msg" style="display:none;margin-top:12px;font-family:var(--font-mono);font-size:0.8rem;color:var(--accent-green);text-align:center;">
+        ✓ Message sent successfully!
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <h3>[TAR] · Tanvir Anjum Ratul</h3>
+      <p>IT Professional & Network Specialist based in Dhaka, Bangladesh. Currently serving at Aristopharma Ltd. Open to new opportunities and collaborations.</p>
+      <div class="footer-socials">
+        <a href="https://www.linkedin.com/in/tanviranjumratul" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/tanviranjumratul" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://twitter.com/TanvirAnjmRatul" target="_blank"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://www.instagram.com/tanviranjumratul" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="mailto:tanjumratul@gmail.com"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#education">Education</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div class="footer-col">
+      <h4>Expertise</h4>
+      <a href="#skills">Network Administration</a>
+      <a href="#skills">IT Infrastructure</a>
+      <a href="#skills">Data Analysis</a>
+      <a href="#skills">Power BI / Tableau</a>
+      <a href="#skills">SQL & Python</a>
+      <a href="#skills">Cloud (AWS)</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 <span class="accent">Tanvir Anjum Ratul</span>. All rights reserved.</p>
+    <p>Built with <span class="accent">♥</span> in Dhaka, Bangladesh</p>
+  </div>
+</footer>
+
+<!-- Scroll Top Button -->
+<div id="scroll-top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <i class="fas fa-chevron-up"></i>
+</div>
+
+<!-- ===== SCRIPTS ===== -->
+<script>
+/* ===== NETWORK CANVAS ANIMATION ===== */
+(function() {
+  const canvas = document.getElementById('network-canvas');
+  const ctx = canvas.getContext('2d');
+  let nodes = [], W, H;
+  const COUNT = 55, MAX_DIST = 160;
+
+  function resize() {
+    W = canvas.width = window.innerWidth;
+    H = canvas.height = window.innerHeight;
+  }
+
+  function initNodes() {
+    nodes = [];
+    for (let i = 0; i < COUNT; i++) {
+      nodes.push({
+        x: Math.random() * W,
+        y: Math.random() * H,
+        vx: (Math.random() - 0.5) * 0.4,
+        vy: (Math.random() - 0.5) * 0.4,
+        r: Math.random() * 2 + 1,
+        pulse: Math.random() * Math.PI * 2
+      });
+    }
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+    nodes.forEach(n => {
+      n.x += n.vx; n.y += n.vy;
+      n.pulse += 0.02;
+      if (n.x < 0 || n.x > W) n.vx *= -1;
+      if (n.y < 0 || n.y > H) n.vy *= -1;
+    });
+
+    for (let i = 0; i < nodes.length; i++) {
+      for (let j = i + 1; j < nodes.length; j++) {
+        const dx = nodes[i].x - nodes[j].x;
+        const dy = nodes[i].y - nodes[j].y;
+        const dist = Math.sqrt(dx*dx + dy*dy);
+        if (dist < MAX_DIST) {
+          const alpha = (1 - dist / MAX_DIST) * 0.5;
+          ctx.beginPath();
+          ctx.moveTo(nodes[i].x, nodes[i].y);
+          ctx.lineTo(nodes[j].x, nodes[j].y);
+          ctx.strokeStyle = `rgba(0, 212, 255, ${alpha})`;
+          ctx.lineWidth = 0.6;
+          ctx.stroke();
+        }
+      }
+    }
+
+    nodes.forEach(n => {
+      const glow = Math.sin(n.pulse) * 0.5 + 0.5;
+      ctx.beginPath();
+      ctx.arc(n.x, n.y, n.r + glow, 0, Math.PI * 2);
+      ctx.fillStyle = `rgba(0, 212, 255, ${0.4 + glow * 0.5})`;
+      ctx.fill();
+    });
+
+    requestAnimationFrame(draw);
+  }
+
+  resize();
+  initNodes();
+  draw();
+  window.addEventListener('resize', () => { resize(); initNodes(); });
+})();
+
+/* ===== TYPED ROLE EFFECT ===== */
+(function() {
+  const roles = ['IT Officer · Aristopharma Ltd.', 'Network Administrator', 'Data Analyst & BI Developer', 'IT Infrastructure Specialist'];
+  let ri = 0, ci = 0, deleting = false, pause = 0;
+  const el = document.getElementById('typed-role');
+  function type() {
+    if (pause > 0) { pause--; setTimeout(type, 100); return; }
+    const current = roles[ri];
+    if (!deleting) {
+      el.textContent = current.slice(0, ++ci);
+      if (ci === current.length) { deleting = true; pause = 28; }
+      setTimeout(type, 65);
+    } else {
+      el.textContent = current.slice(0, --ci);
+      if (ci === 0) { deleting = false; ri = (ri + 1) % roles.length; pause = 6; }
+      setTimeout(type, 35);
+    }
+  }
+  type();
+})();
+
+/* ===== SCROLL REVEAL ===== */
+(function() {
+  const reveals = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        e.target.style.transitionDelay = (i % 3 * 0.1) + 's';
+        e.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.12 });
+  reveals.forEach(r => obs.observe(r));
+})();
+
+/* ===== SCROLL SPY + TOP BUTTON ===== */
+window.addEventListener('scroll', function() {
+  const scrollTop = document.getElementById('scroll-top');
+  if (window.scrollY > 400) scrollTop.classList.add('visible');
+  else scrollTop.classList.remove('visible');
+
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('nav ul li a');
+  sections.forEach(s => {
+    const top = s.offsetTop - 80;
+    const bottom = top + s.offsetHeight;
+    if (window.scrollY >= top && window.scrollY < bottom) {
+      navLinks.forEach(a => {
+        a.classList.remove('active');
+        if (a.getAttribute('href') === '#' + s.id) a.classList.add('active');
+      });
+    }
+  });
+});
+
+/* ===== MOBILE NAV ===== */
+const menuBtn = document.getElementById('menu-btn');
+const navbar = document.getElementById('navbar');
+menuBtn.addEventListener('click', () => {
+  navbar.classList.toggle('open');
+  const icon = menuBtn.querySelector('i');
+  icon.className = navbar.classList.contains('open') ? 'fas fa-times' : 'fas fa-bars';
+});
+document.querySelectorAll('nav a').forEach(a => {
+  a.addEventListener('click', () => {
+    navbar.classList.remove('open');
+    menuBtn.querySelector('i').className = 'fas fa-bars';
+  });
+});
+
+/* ===== SMOOTH SCROLL ===== */
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+
+/* ===== FORM SUBMIT ===== */
+function handleFormSubmit(btn) {
+  const msg = document.getElementById('form-msg');
+  btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+  btn.style.opacity = '0.7';
+  setTimeout(() => {
+    btn.innerHTML = '<i class="fas fa-check"></i> Sent!';
+    btn.style.background = 'var(--accent-green)';
+    msg.style.display = 'block';
+    setTimeout(() => {
+      btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+      btn.style.background = '';
+      btn.style.opacity = '';
+      msg.style.display = 'none';
+    }, 4000);
+  }, 1500);
+}
+</script>
+</body>
+</html>
